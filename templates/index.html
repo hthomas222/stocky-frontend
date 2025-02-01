@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stocky</title>
+</head>
+<!Doctype html>
+<style>
+body {
+    background-color: #bbc4c2;
+}
+
+h1{
+  text-align: center;
+  color: #000;
+  font-size: 20pt;
+}
+
+h2, p {
+    color: #000;
+    text-align: center;
+}
+h3 {
+    text-align: center;
+    color: #000;
+    text-align: center;
+}
+.btn-group button {
+  background-color: #000;
+  border: 1px solid #bbc4c2;
+  color: #bbc4c2;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left;
+}
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; 
+}
+
+.btn-group button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: black; 
+  color: #bbc4c2; 
+  border: 2px solid black;
+}
+
+.button1:hover {
+  background-color: white;
+  color: black;
+}
+
+.button2 {
+    background-color: black; 
+  color: #bbc4c2;
+  border: 2px solid black;
+}
+
+.button2:hover {
+    background-color: white;
+  color: black;
+}
+
+.flex-parent {
+  display: flex;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+button.margin-right {
+  margin-right: 20px;
+}
+
+.btn-home button {
+  background-color: #000;
+  border: 1px solid 1a8eabfd;
+  color: #ffffff;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left;
+}
+
+
+button[type=submit] {
+  width: 100%;
+  background-color: #000;
+  color: #bbc4c2;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type=submit]:hover {
+  background-color: white;
+  color: black;
+}
+
+
+td {
+  font-size: 12pt;
+}
+
+table {
+  padding-top: 20px;
+}
+
+th{
+  font-size: 15pt;
+}
+
+input[type=text] {
+  width: 95%;
+  background-color: #fff;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+label{
+    font-size: 14pt;
+    
+}
+
+</style>
+<body>
+<h1>Stocky</h1>
+</div>
+<form action="/stock-results/" method="post">
+    <label for="stock"><b>Stock Pick:</b></label><br>
+    <input type="text" id="stock" name="stock"><br>
+    <button type="submit" name="single" style="width:100%">Send</button>
+</form>
+
+<br>
+<br>
+<h3>{{s}}</h3>
+<p>Open: {{op}}</p>
+<p>DayLow: {{dl}}</p>
+<p>dayHigh: {{dh}}</p>
+<p>previousClose: {{pc}}</p>
+</div>
+
+<br>
+
+<div class="btn-group" style="width:100%">
+    <a href="/">
+        <button style="width:100%">HOME</button>
+    </a>
+</div>
+
+
+
+</body>
+</html>
