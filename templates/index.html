@@ -28,10 +28,11 @@ h3 {
 .btn-group button {
   background-color: #000;
   border: 1px solid #bbc4c2;
+  border-radius: 5px;
   color: #bbc4c2;
   padding: 10px 24px;
   cursor: pointer;
-  float: left;
+  float: right;
 }
 .btn-group:after {
   content: "";
@@ -135,7 +136,7 @@ th{
 }
 
 input[type=text] {
-  width: 95%;
+  width: 100%;
   background-color: #fff;
   color: black;
   padding: 14px 20px;
@@ -151,11 +152,17 @@ label{
 
 </style>
 <body>
-<h1>Stocky</h1>
-</div>
+
+  <div class="btn-group" style="width:100%">
+    <a href="/">
+        <button style="width:15%">LOGOUT</button>
+    </a>
+  </div>
+<h1>Pick a Stock</h1>
+
+
 <form action="/stock-results/" method="post">
-    <label for="stock"><b>Stock Pick:</b></label><br>
-    <input type="text" id="stock" name="stock"><br>
+    <input type="text" id="stock" placeholder="chwy" name="stock"><br>
     <button type="submit" name="single" style="width:100%">Send</button>
 </form>
 
@@ -166,15 +173,6 @@ label{
 <p>DayLow: {{dl}}</p>
 <p>dayHigh: {{dh}}</p>
 <p>previousClose: {{pc}}</p>
-</div>
-
-<br>
-
-<div class="btn-group" style="width:100%">
-    <a href="/">
-        <button style="width:100%">HOME</button>
-    </a>
-</div>
 
 
 
