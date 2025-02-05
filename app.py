@@ -1,13 +1,29 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import yfinance as yf
 
 
 app = Flask(__name__)
 
-
 @app.route('/')
-def main():
+def index():
+    return redirect(url_for('login'))
+
+
+@app.route('/auth', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            return redirect(url_for('test'))
+    return render_template("auth.html", error=error)
+
+
+@app.route('/home')
+def test():
     return render_template("index.html")
+
 
 @app.route("/stock-results/", methods=["POST"])
 def packages():
@@ -24,5 +40,11 @@ def packages():
     return render_template("index.html")
 
 
-# if __name__ == '__main__':
-#      app.run(port=8080, debug=True)
+@app.route('/logout')
+def logout():
+    return redirect("/")
+
+
+
+if __name__ == '__main__':
+     app.run(port=8080, debug=True)
