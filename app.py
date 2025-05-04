@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import yfinance as yf
 import sqlite3
-from werkzeug.security import generate_password_hash, check_password_hash 
 
 
 app = Flask(__name__)
