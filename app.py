@@ -21,8 +21,10 @@ def login():
         cursor.execute("SELECT * FROM users")
         rows = cursor.fetchall()
         for i in rows:
-            if un == i[1]: 
-                if pw == i[2]:
+            print(i[0])
+            if un == i[0]: 
+                print(i)
+                if pw == i[1]:
                     return redirect(url_for('test'))
                 else:
                     error = 'Invalid Credentials. Please try again.'
@@ -33,24 +35,25 @@ def login():
     return render_template("auth.html", error=error)
 
 
-@app.route('/create-user', methods=['GET', 'POST'])
-def create_user():
-    return render_template("register.html")
-
-
-@app.route('/create-user/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
+    return render_template("register.html", error=error)
+
+
+@app.route('/register/create_user', methods=['GET', 'POST'])
+def create_user():
+    error = None
     if request.method == 'POST':
-        un = request.form['user']
-        pw = request.form['pw']
+        un = request.form['username']
+        pw = request.form['password']
         if len(pw) >= 12:
             con = sqlite3.connect("users.db")
             cur = con.cursor()
             cur.execute("INSERT INTO users (username,password) VALUES (?,?)", (un,pw))
             con.commit()
             con.close()
-            return render_template("auth.html", error=error)
+            return redirect(url_for('login'))
         else: 
             error="Password must be longer than 12!"
             return render_template("register.html", error=error)
@@ -59,6 +62,7 @@ def register():
 @app.route('/home')
 def test():
     return render_template("index.html")
+
 
 
 @app.route("/stock-results/", methods=["POST"])
