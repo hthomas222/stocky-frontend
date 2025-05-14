@@ -1,113 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+  <head>
     <title>Stock Viewer login</title>
-</head>
-<!Doctype html>
-<style>
-body {
-    background-color: #bbc4c2;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <style>
+    body {
+        background-color: #bbc4c2;
+    }
+    
+    h1{
+      text-align: center;
+      color: #000;
+      font-size: 20pt;
+    }
+    
+    h2, p {
+        color: #000;
+        text-align: center;
+    }
+    h3 {
+        text-align: center;
+        color: #000;
+        text-align: center;
+    }
+    .btn-group button {
+      background-color: #000;
+      border: 1px solid #bbc4c2;
+      color: #bbc4c2;
+      padding: 10px 24px;
+      cursor: pointer;
+      float: left;
+    }
+    .btn-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    .btn-group button:not(:last-child) {
+      border-right: none; 
+    }
+    
+    .btn-group button:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+    
+    .button {
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    
+    .button1 {
+      background-color: black; 
+      color: #bbc4c2; 
+      border: 2px solid black;
+    }
+    
+    .button1:hover {
+      background-color: white;
+      color: black;
+    }
+    
+    .button2 {
+        background-color: black; 
+      color: #bbc4c2;
+      border: 2px solid black;
+    }
+    
+    .button2:hover {
+        background-color: white;
+      color: black;
+    }
+    
+    .flex-parent {
+      display: flex;
+    }
+    
+    .jc-center {
+      justify-content: center;
+    }
+    
+    button.margin-right {
+      margin-right: 20px;
+    }
+    
+    .btn-home button {
+      background-color: #000;
+      border: 1px solid 1a8eabfd;
+      color: #ffffff;
+      padding: 10px 24px;
+      cursor: pointer;
+      float: left;
+    }
+    
+    
+    button[type=submit] {
+      width: 100%;
+      background-color: #000;
+      color: #bbc4c2;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button[type=submit]:hover {
+      background-color: white;
+      color: black;
+    }
+    
+    
+    td {
+      font-size: 12pt;
+    }
+    
+    table {
+      padding-top: 20px;
+    }
+    
+    th{
+      font-size: 15pt;
+    }
+    
+    input[type=text] {
+      width: 100%;
+      background-color: #fff;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-h1{
-  text-align: center;
-  color: #000;
-  font-size: 20pt;
-}
-
-h2, p {
-    color: #000;
-    text-align: center;
-}
-h3 {
-    text-align: center;
-    color: #000;
-    text-align: center;
-}
-.btn-group button {
-  background-color: #000;
-  border: 1px solid #bbc4c2;
-  border-radius: 5px;
-  color: #bbc4c2;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: right;
-}
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.btn-group button:not(:last-child) {
-  border-right: none; 
-}
-
-.btn-group button:hover {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-}
-
-.button {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button1 {
-  background-color: black; 
-  color: #bbc4c2; 
-  border: 2px solid black;
-}
-
-.button1:hover {
-  background-color: white;
-  color: black;
-}
-
-.button2 {
-    background-color: black; 
-  color: #bbc4c2;
-  border: 2px solid black;
-}
-
-.button2:hover {
-    background-color: white;
-  color: black;
-}
-
-.flex-parent {
-  display: flex;
-}
-
-.jc-center {
-  justify-content: center;
-}
-
-button.margin-right {
-  margin-right: 20px;
-}
-
-.btn-home button {
-  background-color: #000;
-  border: 1px solid 1a8eabfd;
-  color: #ffffff;
-  padding: 10px 24px;
-  cursor: pointer;
-  float: left;
-}
-
-
-button[type=submit] {
+    input[type=password] {
+      width: 100%;
+      background-color: #fff;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button[type=submit] {
   width: 100%;
   background-color: #000;
   color: #bbc4c2;
@@ -122,59 +168,47 @@ button[type=submit]:hover {
   color: black;
 }
 
-
-td {
-  font-size: 12pt;
-}
-
-table {
-  padding-top: 20px;
-}
-
-th{
-  font-size: 15pt;
-}
-
-input[type=text] {
+button[type=button] {
   width: 100%;
-  background-color: #fff;
-  color: black;
+  background-color: #000;
+  color: #bbc4c2;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-label{
-    font-size: 14pt;
-    
+button[type=button]:hover {
+  background-color: white;
+  color: black;
 }
-
-</style>
-<body>
-
-  <div class="btn-group" style="width:100%">
-    <a href="/">
-        <button style="width:15%">LOGOUT</button>
-    </a>
-  </div>
-<h1>Pick a Stock</h1>
-
-
-<form action="/stock-results/" method="post">
-    <input type="text" id="stock" placeholder="chwy" name="stock"><br>
-    <button type="submit" name="single" style="width:100%">Send</button>
-</form>
-
-<br>
-<br>
-<h3>{{s}}</h3>
-<p>Open: {{op}}</p>
-<p>DayLow: {{dl}}</p>
-<p>dayHigh: {{dh}}</p>
-<p>previousClose: {{pc}}</p>
+ 
 
 
 
-</body>
+    label{
+        font-size: 14pt;
+        
+    }
+    
+    </style>
+  <body>
+    <div class="container">
+      <h1>Stock Viewer Login</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+          <button type="submit" name="single" style="width:100%">Login</button>
+      </form>
+      <form action="/register" method="post">
+          <button type="submit" name="register" style="width:100%">Register</button>
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
 </html>
