@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Stocky login</title>
+    <title>Stock Viewer login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <style>
@@ -167,7 +167,25 @@ button[type=submit]:hover {
   background-color: white;
   color: black;
 }
+
+button[type=button] {
+  width: 100%;
+  background-color: #000;
+  color: #bbc4c2;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type=button]:hover {
+  background-color: white;
+  color: black;
+}
  
+
+
+
     label{
         font-size: 14pt;
         
@@ -176,7 +194,7 @@ button[type=submit]:hover {
     </style>
   <body>
     <div class="container">
-      <h1>Stocky Login</h1>
+      <h1>Stock Viewer Login</h1>
       <br>
       <form action="" method="post">
         <input type="text" placeholder="Username" name="username" value="{{
@@ -184,6 +202,9 @@ button[type=submit]:hover {
          <input type="password" placeholder="Password" name="password" value="{{
           request.form.password }}">
           <button type="submit" name="single" style="width:100%">Login</button>
+      </form>
+      <form action="/register" method="post">
+          <button type="submit" name="register" style="width:100%">Register</button>
       </form>
       {% if error %}
         <p class="error"><strong>Error:</strong> {{ error }}
